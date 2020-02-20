@@ -72,7 +72,7 @@ def generate_mnist(root_dir: Path):
     def read_img(file_path: Path):
         with open(str(file_path), 'rb') as fimg:
             magic, num, rows, cols = struct.unpack(">IIII", fimg.read(16))
-            img = np.fromfile(fimg, dtype=np.uint8).reshape(-1, rows, cols)
+            img = np.fromfile(fimg, dtype=np.uint8).reshape(-1, rows, cols, 1)
 
         return img
 
@@ -104,7 +104,7 @@ def generate_usps(root_dir: Path):
         with open(str(file_path), 'r') as f:
             data_array = np.loadtxt(f)
             labels = data_array[:, 0].astype(np.int)
-            images = data_array[:, 1:].reshape(-1, 16, 16)
+            images = data_array[:, 1:].reshape(-1, 16, 16, 1)
         return images, labels
 
     train_img, train_lbl = read_images_and_labels(root_dir / 'zip.train')
