@@ -4,3 +4,10 @@
 .DS_Store
 
 datasets/MNIST/
+datasets/Office31/
+datasets/USPS/
+__pycache__
+log
+*.pyc
+ckpt/
+pretrained/
