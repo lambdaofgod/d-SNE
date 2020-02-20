@@ -1,0 +1,15 @@
+name: dsne
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.6
+  - numpy
+  - scikit-learn
+  - scikit-image
+  - scipy
+  - seaborn
+  - pip
+  - pip:
+      - mxnet-cu101mkl
+      - mxboard
