@@ -9,6 +9,7 @@ dependencies:
   - scikit-image
   - scipy
   - seaborn
+  - tqdm
   - pip
   - pip:
       - mxnet-cu101mkl
