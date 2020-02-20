@@ -46,7 +46,7 @@ class DatasetGenerator:
             os.remove(file_path)
 
     def dump(self, train_img: np.ndarray, train_lbl: np.ndarray, test_img: np.ndarray, test_lbl: np.ndarray):
-        dataset = {'TR': [train_img, train_lbl], 'TE': [test_img, test_lbl]}
+        dataset = [train_img, train_lbl, test_img, test_lbl]
         file_path = self.root_dir / (self.name + '.pkl')
         print('Creating pickle file {}...'.format(file_path))
         with open(str(file_path), 'wb') as f:
