@@ -97,12 +97,12 @@ class DomainModel(object):
 
         return train_tforms, eval_tforms
 
-    def create_loader(self):
+    def create_loader(self, parallelize: bool = False):
         """
         Create data loader
         :return: data loaders
         """
-        cpus = cpu_count()
+        cpus = cpu_count() if parallelize else 0
         train_tforms, eval_tforms = self.create_transformer()
 
         if 'digits' in self.args.cfg:
@@ -652,12 +652,12 @@ class AuxModel(DomainModel):
     def __init__(self, args):
         super(AuxModel, self).__init__(args)
 
-    def create_loader(self):
+    def create_loader(self, parallelize: bool = False):
         """
         Overwrite the data loader function
         :return: pairwised data loader, None, eval source loader, test target loader
         """
-        cpus = cpu_count()
+        cpus = cpu_count() if parallelize else 0
 
         train_tforms, eval_tforms = [transforms.Resize(self.args.resize)], [transforms.Resize(self.args.resize)]
 
