@@ -26,9 +26,11 @@ class Baseline2Convs(gluon.nn.HybridBlock):
             self.features.add(gluon.nn.MaxPool2D())
             self.features.add(gluon.nn.Dropout(0.5))
 
-            self.features.add(gluon.nn.Dense(feature_size))
+            self.features.add(gluon.nn.Dense(120))
+            self.features.add(gluon.nn.Dense(84))
+
             if self.use_norm:
-                self.output = AngularLinear(classes, in_uints=feature_size)
+                self.output = AngularLinear(classes, in_uints=84)
             else:
                 self.output = gluon.nn.Dense(classes)
 

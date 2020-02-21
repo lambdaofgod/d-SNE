@@ -302,6 +302,10 @@ class DomainModel(object):
                 num_layers=self.args.nlayers, classes=self.args.nc, embed_size=self.args.embed_size,
                 use_dropout=self.args.dropout, use_bn=self.args.bn, use_norm=self.args.l2n,
                 use_angular=self.args.angular)
+        elif self.args.bb == 'baseline2convs':
+            inference = importlib.import_module('models.%s' % self.args.bb).get_inference(
+                classes=self.args.nc, embed_size=self.args.embed_size,
+                use_dropout=self.args.dropout, use_norm=self.args.l2n)
         else:
             raise NotImplementedError
         if self.args.hybridize:
