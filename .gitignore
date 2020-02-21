@@ -12,3 +12,4 @@ log
 ckpt/
 pretrained/
 SRC-TRAIN
+.ipynb_checkpoints/
