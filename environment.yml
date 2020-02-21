@@ -10,6 +10,7 @@ dependencies:
   - scipy
   - seaborn
   - tqdm
+  - jupyterlab
   - pip
   - pip:
       - mxnet-cu101mkl

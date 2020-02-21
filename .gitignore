@@ -11,3 +11,4 @@ log
 *.pyc
 ckpt/
 pretrained/
+SRC-TRAIN
