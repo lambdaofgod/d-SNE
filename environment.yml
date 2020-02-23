@@ -15,4 +15,4 @@ dependencies:
   - pip:
       - mxnet-cu101mkl
       - mxboard
-      - qgrid
+
