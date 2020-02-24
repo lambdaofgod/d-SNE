@@ -12,7 +12,7 @@ do
         --method dsne \
         --nc 10 \
         --size 32 \
-        --bb lenetplus \
+        --bb baseline2convs \
         --dropout \
         --train-src \
         --lr 0.1 \
@@ -21,7 +21,7 @@ do
         --lr-epoch 50 \
         --log-itv 0 \
         --postfix s$SAMPLES-0.5-l2n-seed$SEED \
-        --embed-size 80 \
+        --embed-size 84 \
         --l2n \
         --alpha 0.5 \
         --seed $SEED
